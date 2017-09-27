@@ -6,7 +6,7 @@
  *
  * @category    plugin
  * @version     0.1
- * @internal    @properties
+ * @internal    @properties &allow_files_from_outside=Allow files outside of default folders;list;true,false;false
  * @internal    @events OnSnipFormRender,OnBeforeSnipFormSave,OnSnipFormPrerender,OnPluginFormPrerender,OnPluginFormRender,OnBeforePluginFormSave
  * @internal    @modx_category Manager and Admin
  * @internal    @installset base
@@ -43,7 +43,7 @@ if($modx->event->name==='OnBeforePluginFormSave' || $modx->event->name==='OnBefo
     {
         $filebinding = trim($modx->db->escape($_POST['filebinding']));
         if(strpos($filebinding,'\\')) $filebinding = str_replace('\\','/',$filebinding);
-        if(strpos($filebinding,'../')!==false || substr($filebinding,0,1)==='/')
+        if((!$allow_files_from_outside && strpos($filebinding,'../')!==false) || substr($filebinding,0,1)==='/')
             $has_filebinding = '0';
         elseif(!empty($filebinding))
         {
@@ -114,7 +114,7 @@ switch ($modx->event->name)
 mE1   = new Element("tr");
 mE11  = new Element("th",{"align":"left","styles":{"padding-top":"14px"}});
 mE12  = new Element("td",{"align":"left","styles":{"padding-top":"14px"}});
-mE122 = new Element("input",{"name":"filebinding","type":"text","maxlength":"75","value":"'.$content['file_binding'].'","class":"inputBox","styles":{"width":"300px"},"events":{"change":function(){documentDirty=true;}}});
+mE122 = new Element("input",{"name":"filebinding","type":"text","maxlength":"90","value":"'.$content['file_binding'].'","class":"inputBox","styles":{"width":"300px"},"events":{"change":function(){documentDirty=true;}}});
 
 mE11.appendText("' . _lang('Static file path') . '");
 mE11.inject(mE1);

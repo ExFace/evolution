@@ -3,9 +3,16 @@
  * FileSource
  *
  * Save snippets and plugins to static files
+ * 
+ * Adds an input filed for the file path to save to in the properties tab of every plugin or snippet. The path must be specified
+ * relative to the respective element folder (i.e. assets/plugins or assets/snippets). By default, only files located in those
+ * folders are allowed. If you wish to include files from outside of these folders, set the configuration option "Allow files
+ * outside of default folders" of the filesource plugin to true: The file path must still be specified relative to the default
+ * folders, but going up the folder tree is now allowed (e.g. ../../myfile.php) will point to a file in the root of the MODx
+ * installation.
  *
  * @category    plugin
- * @version     0.1
+ * @version     0.2
  * @internal    @properties &allow_files_from_outside=Allow files outside of default folders;list;true,false;false
  * @internal    @events OnSnipFormRender,OnBeforeSnipFormSave,OnSnipFormPrerender,OnPluginFormPrerender,OnPluginFormRender,OnBeforePluginFormSave
  * @internal    @modx_category Manager and Admin
@@ -116,7 +123,7 @@ mE11  = new Element("th",{"align":"left","styles":{"padding-top":"14px"}});
 mE12  = new Element("td",{"align":"left","styles":{"padding-top":"14px"}});
 mE122 = new Element("input",{"name":"filebinding","type":"text","maxlength":"90","value":"'.$content['file_binding'].'","class":"inputBox","styles":{"width":"300px"},"events":{"change":function(){documentDirty=true;}}});
 
-mE11.appendText("' . _lang('Static file path') . '");
+mE11.appendText("' . _lang('Static file path') . ' (' . _lang('Static file hint') . 'assets/' . $elm_name . '/)");
 mE11.inject(mE1);
 mE122.inject(mE12);
 mE12.inject(mE1);

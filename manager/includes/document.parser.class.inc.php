@@ -4130,7 +4130,8 @@ class DocumentParser {
                 }
                 // BOF manager login detection in frontend by exface
                 case ($this->isFrontend() && isset ($_SESSION['mgrValidated'])): {
-                    return $_SESSION['mgrInternalKey'];
+                    $out = $_SESSION['mgrInternalKey'];
+                    break;
                 }
                 // EOF manager login detection in frontend by exface
                 case ($this->isBackend() && isset ($_SESSION['mgrValidated'])):{
@@ -4163,7 +4164,8 @@ class DocumentParser {
                 }
                 // BOF manager login detection in frontend by exface
                 case ($this->isFrontend() && isset ($_SESSION['mgrValidated'])): {
-                    return $_SESSION['mgrShortname'];
+                    $out = $_SESSION['mgrShortname'];
+                    break;
                 }
                 // EOF manager login detection in frontend by exface
                 case ($this->isBackend() && isset ($_SESSION['mgrValidated'])):{
@@ -4248,7 +4250,6 @@ class DocumentParser {
             $dg = $_SESSION['webDocgroups'];
             $dgn = isset($_SESSION['webDocgrpNames']) ? $_SESSION['webDocgrpNames'] : false;
         } else
-            if ($this->isBackend() && isset($_SESSION['mgrDocgroups']) && isset($_SESSION['mgrValidated'])) {
             // BOF manager login detection in frontend by exface
             if (isset ($_SESSION['mgrDocgroups']) && isset ($_SESSION['mgrValidated'])) {
             // EOF manager login detection in frontend by exface

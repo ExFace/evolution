@@ -12,7 +12,7 @@
  * @internal	@modx_category Manager and Admin
  * @internal    @legacy_names QM+,QuickEdit
  * @internal    @installset base, sample
- * @internal    @disabled 1
+ * @internal    @disabled 0
  * @reportissues https://github.com/modxcms/evolution
  * @documentation Official docs [+site_url+]assets/plugins/qm/readme.html
  * @link        http://www.maagit.fi/modx/quickmanager-plus

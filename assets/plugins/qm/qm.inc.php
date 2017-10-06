@@ -4,7 +4,7 @@
  *  
  * @author      Mikko Lammi, www.maagit.fi, updated by Dmi3yy and Nicola1971 
  * @license     GNU General Public License (GPL), http://www.gnu.org/copyleft/gpl.html
- * @version     1.5.8 updated 21/08/2017
+ * @version     1.5.9 updated 06/10/2017
  */
 
 if(!class_exists('Qm')) {
@@ -351,6 +351,20 @@ class Qm {
                         </li>
                         ';
                         
+                        // MOD Delete button by kabachello
+                        $deleteButton = '
+                        <li class="qmDelete">
+                        <a class="qmButton qmDelete colorbox" href="'.$this->modx->config['site_manager_url'].'/index.php?a=6&amp;id='.$docID.'&amp;quickmanager=1&amp;qmrefresh='.$doc['parent'].'"><span> '.$_lang['delete_resource'].'</span></a>
+                        </li>
+                        ';
+                        
+                        // MOD Sort button by kabachello
+                        $sortButton = '
+                        <li class="qmSort">
+                        <a class="qmButton qmSort colorbox" href="'.$this->modx->config['site_manager_url'].'/index.php?a=56&amp;id='.$docID.'&amp;quickmanager=1"><span> '.$_lang['sort_menuindex'].'</span></a>
+                        </li>
+                        ';
+                        
                         // Check if user has manager access to current document
                         $access = $this->checkAccess();
                         
@@ -367,7 +381,13 @@ class Qm {
                             
                             // Does user have permissions to add document
                             if($this->modx->hasPermission('new_document')) $controls .= $addButton;        
-                        }            
+                        }       
+                        
+                        // MOD Delete button by kabachello
+                        if($access) $controls .= $deleteButton;
+                        
+                        // MOD Sort button by kabachello
+                        if($access) $controls .= $sortButton;
                         
                         // Custom add buttons if not empty and enough permissions
                         if ($this->custombutton != '') {  

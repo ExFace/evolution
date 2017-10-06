@@ -37,15 +37,21 @@ switch ($e->name)
 
 				<!-- json lint -->
 				<script type="text/javascript" src="{$base_path}assets/plugins/jsoneditor/jsoneditor/lib/jsonlint/jsonlint.js"></script>
-				<script type="text/javascript">
-				var richIds = ["$richIds"];
+				
+                <!-- Style fixes for MODx -->
+				<style>
+					.jsoneditor-contextmenu ul.menu {width: 126px !important}
+				</style>
+				
+				<!-- Plugin initialization --><script type="text/javascript">
+				var richIds = ["{$richIds}"];
 				var jsonEditors = {};
 				for (var richField=0;richField<richIds.length;richField++){
 						var richId = richIds[richField];
 						var el = document.getElementById(richId);
 						var newDiv = document.createElement('div');
 						newDiv.setAttribute('id', 'jsonEditor'+richId);
-						newDiv.style.height = '$default_height'+'px';
+						newDiv.style.height = '{$default_height}'+'px';
 						
 						var options = {
 							mode: 'tree',
@@ -56,7 +62,7 @@ switch ($e->name)
 						  };
 
 						var editor = new jsoneditor.JSONEditor(newDiv, options);
-						editor.setText(el.innerHTML || "$init_value");
+						editor.setText(el.innerHTML || "{$init_value}" || "{}");
 						editor.expandAll();
 						jsonEditors[richId] = editor;
 						el.parentNode.insertBefore(newDiv,el.nextSibling);
@@ -103,7 +109,7 @@ switch ($e->name)
 				function jsonEditorSave(e){
 					for (key in jsonEditors){
 						var el = document.getElementById(key);
-						if (jsonEditors[key].getText() != '$init_value'){
+						if (jsonEditors[key].getText() !== '' && jsonEditors[key].getText() !== '{}' && jsonEditors[key].getText() != '$init_value'){
 							el.innerHTML = jsonEditors[key].getText();
 						}
 					}

@@ -354,14 +354,14 @@ class Qm {
                         // MOD Delete button by kabachello
                         $deleteButton = '
                         <li class="qmDelete">
-                        <a class="qmButton qmDelete colorbox" href="'.$this->modx->config['site_manager_url'].'/index.php?a=6&amp;id='.$docID.'&amp;quickmanager=1&amp;qmrefresh='.$doc['parent'].'"><span> '.$_lang['delete_resource'].'</span></a>
+                        <a class="qmButton qmDelete colorbox danger" href="'.$this->modx->config['site_manager_url'].'/index.php?a=6&amp;id='.$docID.'&amp;quickmanager=1&amp;qmrefresh='.$doc['parent'].'"><i class="fa fa-2x fa-fw fa-trash-o butticon"></i><span class="butttext"> '.$_lang['delete_resource'].'</span></a>
                         </li>
                         ';
                         
                         // MOD Sort button by kabachello
                         $sortButton = '
                         <li class="qmSort">
-                        <a class="qmButton qmSort colorbox" href="'.$this->modx->config['site_manager_url'].'/index.php?a=56&amp;id='.$docID.'&amp;quickmanager=1"><span> '.$_lang['sort_menuindex'].'</span></a>
+                        <a class="qmButton qmSort colorbox" href="'.$this->modx->config['site_manager_url'].'/index.php?a=56&amp;id='.$docID.'&amp;quickmanager=1"><i class="fa fa-2x fa-fw fa-sort-numeric-desc butticon"></i><span class="butttext"> '.$_lang['sort_menuindex'].'</span></a>
                         </li>
                         ';
                         
@@ -383,11 +383,11 @@ class Qm {
                             if($this->modx->hasPermission('new_document')) $controls .= $addButton;        
                         }       
                         
-                        // MOD Delete button by kabachello
-                        if($access) $controls .= $deleteButton;
-                        
                         // MOD Sort button by kabachello
                         if($access) $controls .= $sortButton;
+                        
+                        // MOD Delete button by kabachello
+                        if($access) $controls .= $deleteButton;
                         
                         // Custom add buttons if not empty and enough permissions
                         if ($this->custombutton != '') {  

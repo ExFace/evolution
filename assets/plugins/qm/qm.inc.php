@@ -569,7 +569,7 @@ class Qm {
                             #qmLogoClose {padding: 5px 0 0 10px!important;}
                             #qmEditorClosed {padding: 10px 0 5px 10px!important;}
                             #qmEditor {overflow-y: scroll;}
-                            #qmEditor > ul {min-width: 450px}
+                            #qmEditor > ul {min-width: 500px}
                             #qmEditor li {line-height:38px!important}
                             }
                             @media only screen 

@@ -568,6 +568,8 @@ class Qm {
                             #qmEditor .qmButton.qmClose {padding: 7px 15px 11px 10px;}
                             #qmLogoClose {padding: 5px 0 0 10px!important;}
                             #qmEditorClosed {padding: 10px 0 5px 10px!important;}
+                            #qmEditor {overflow-y: scroll;}
+                            #qmEditor > ul {min-width: 450px}
                             #qmEditor li {line-height:38px!important}
                             }
                             @media only screen 

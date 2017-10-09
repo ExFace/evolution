@@ -25,20 +25,24 @@
 	</div>
 	<div class="row">
 		<div class="col-xs-8">
-			<div class="checkbox">
-				<label>
-					<input type="checkbox" id="checkbox_1" name="checkbox_1" tabindex="3" value="" [+checkbox+] onclick="webLoginCheckRemember()">Remember me
-				</label>
-			</div>
-		</div>
-		<!-- /.col -->
+          <div class="checkbox icheck">
+            <label>
+              <input type="checkbox" id="checkbox_1" name="checkbox_1" tabindex="3" value="" [+checkbox+] onclick="webLoginCheckRemember()"> &nbsp;Remember Me
+            </label>
+          </div>
+        </div>
+        <!-- /.col -->
 		<div class="col-xs-4">
-			<button type="submit" value="[+logintext+]" name="cmdweblogin" class="btn btn-primary btn-block btn-flat">Log in</button>
+			<button type="submit" value="[+logintext+]" name="cmdweblogin" class="btn btn-primary btn-block btn-flat" style="margin: 4px 0;">Log in</button>
 		</div>
 		<!-- /.col -->
 	</div>
 </form>
-<a href="[(site_url)]/manager" class="pull-right">Log in to app manager</a><br>
+<div class="row">
+	<div class="col-xs-12 text-right">
+		<a href="[(site_url)]/manager" class="pull-right">Log in to app manager</a>
+	</div>
+</div>
 <!-- /.login-box-body -->
 
 <hr>

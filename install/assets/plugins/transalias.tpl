@@ -12,6 +12,7 @@
  * @author      Olivier B. Deland, additions by Mike Schell, rfoster
  * @internal    @properties &table_name=Trans table;list;common,russian,dutch,german,czech,utf8,utf8lowercase;russian &char_restrict=Restrict alias to;list;lowercase alphanumeric,alphanumeric,legal characters;lowercase alphanumeric &remove_periods=Remove Periods;list;Yes,No;No &word_separator=Word Separator;list;dash,underscore,none;dash &override_tv=Override TV name;string;
  * @internal    @events OnStripAlias
+ * @internal    @disabled 1
  * @internal    @modx_category Manager and Admin
  * @internal    @installset base, sample
  */

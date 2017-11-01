@@ -16,6 +16,10 @@
 
 mm_widget_showimagetvs(); // Always give a preview of Image TVs
 
+// Make some metamodel-related TVs readonly
+mm_ddReadonly(\'ExfacePageUID\');
+mm_ddReadonly(\'ExfacePageDefaultParentAlias\');') WHERE name = 'mm_rules';
+
 //mm_createTab('SEO', 'seo', '', '', '', '');
 //mm_moveFieldsToTab('titl,keyw,desc,seoOverride,noIndex,sitemap_changefreq,sitemap_priority,sitemap_exclude', 'seo', '', '');
 //mm_widget_tags('keyw',','); // Give blog tag editing capabilities to the 'documentTags (3)' TV

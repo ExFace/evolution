@@ -7,7 +7,7 @@
  * @name            ExfacePageAppAlias
  * @internal        @caption App
  * @internal        @input_type dropdown
- * @internal        @input_options @SELECT '' as app_alias UNION ALL SELECT app_alias FROM exf_app
+ * @internal        @input_options @SELECT '' as app_alias, '' as oid UNION ALL SELECT app_alias, CONCAT('0x', HEX(oid)) FROM exf_app
  * @internal        @input_default
  * @internal        @output_widget
  * @internal        @output_widget_params

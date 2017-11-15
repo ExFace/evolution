@@ -10,7 +10,7 @@
  * @package     modx
  * @author      Stefan Leupold, Andrej Kabachnik
  * @internal    @properties
- * @internal    @events OnWebDeleteUser,OnWebSaveUser,OnManagerDeleteUser,OnManagerSaveUser,OnDocFormSave,OnStripAlias,OnBeforeUserFormSave,OnBeforeWUsrFormSave
+ * @internal    @events OnWebDeleteUser,OnWebSaveUser,OnManagerDeleteUser,OnManagerSaveUser,OnDocDuplicate,OnDocFormSave,OnStripAlias,OnBeforeUserFormSave,OnBeforeWUsrFormSave
  * @internal    @modx_category ExFace
  * @internal    @installset base, sample
  */

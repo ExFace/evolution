@@ -12,7 +12,7 @@
  * @internal        @output_widget
  * @internal        @output_widget_params
  * @internal        @lock_tv 0
- * @internal        @template_assignments Desktop (jEasyUI),Mobile (NativeDroid2),Responsive (AdminLTE),alexa RMS embedded
+ * @internal        @template_assignments Desktop (jEasyUI),Mobile (jQuery mobile),Mobile (NativeDroid2),Responsive (AdminLTE),SAP OpenUI5,alexa Embedded
  * @internal        @modx_category ExFace
  * @internal        @installset base
  */

@@ -891,8 +891,9 @@ REPLACE INTO `{PREFIX}site_templates`
 # Default Site Documents
 
 
-REPLACE INTO `{PREFIX}site_content` VALUES (1,'document','text/html','Evolution CMS Install Success','Welcome to the EVO Content Management System','','minimal-base','',1,0,0,0,0,'','<h3>Install Successful!</h3>\r\n<p>You have successfully installed Evolution CMS.</p>\r\n\r\n<h3>Getting Help</h3>\r\n<p>The <a href=\"http://evo.im/\" target=\"_blank\">EVO Community</a> provides a great starting point to learn all things Evolution CMS, or you can also <a href=\"http://evo.im/\">see some great learning resources</a> (books, tutorials, blogs and screencasts).</p>\r\n<p>Welcome to EVO!</p>\r\n',1,3,0,1,1,1,1130304721,1,1130304927,0,0,0,1130304721,1,'Base Install',0,0,0,0,0,1);
-
+REPLACE INTO `{PREFIX}site_content` VALUES (1, 'document', 'text/html', 'Home', '', '', 'index', '', 1, 0, 0, 0, 1, '', '', 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 1),
+(2, 'document', 'text/html', 'Service', '', '', 'service', '', 0, 0, 0, 0, 1, '', '', 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0),
+(3, 'document', 'text/html', 'Login', '', '', 'login', '', 1, 0, 0, 2, 0, '', '<!DOCTYPE html>\r\n<html>\r\n	<head>\r\n		<meta charset="utf-8">\r\n		<meta http-equiv="X-UA-Compatible" content="IE=edge">\r\n		<title>AdminLTE 2 | Log in</title>\r\n		<!-- Tell the browser to be responsive to screen width -->\r\n		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">\r\n		<!-- Bootstrap 3.3.7 -->\r\n		<link rel="stylesheet" href="exface/vendor/almasaeed2010/adminlte/bower_components/bootstrap/dist/css/bootstrap.min.css">\r\n		<!-- Font Awesome -->\r\n		<link rel="stylesheet" href="exface/vendor/almasaeed2010/adminlte/bower_components/font-awesome/css/font-awesome.min.css">\r\n		<!-- Ionicons -->\r\n		<link rel="stylesheet" href="exface/vendor/almasaeed2010/adminlte/bower_components/Ionicons/css/ionicons.min.css">\r\n		<!-- Theme style -->\r\n		<link rel="stylesheet" href="exface/vendor/almasaeed2010/adminlte/dist/css/AdminLTE.min.css">\r\n		<!-- iCheck -->\r\n		<link rel="stylesheet" href="exface/vendor/almasaeed2010/adminlte/plugins/iCheck/square/blue.css">\r\n\r\n		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->\r\n		<!-- WARNING: Respond.js doesn\'t work if you view the page via file:// -->\r\n		<!--[if lt IE 9]>\r\n<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>\r\n<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>\r\n<![endif]-->\r\n\r\n		<!-- Google Font -->\r\n		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">\r\n	</head>\r\n	<body class="hold-transition login-page">\r\n		<div class="login-box">\r\n			<div class="login-logo">\r\n				<a href="[(site_url)]"><b>alexa</b> UI</a>\r\n			</div>\r\n			<div class="login-box-body">\r\n				<!-- /.login-logo -->\r\n				<@IF:[!UserManagerInfo!]>\r\n\r\n					<p class="login-box-msg">You are logged in as <i>[!UserManagerInfo? &field=`fullname`!]</i></p>\r\n\r\n					<@IF:[!UserManagerInfo? &userType=`mgr`!]>\r\n						<p class="login-box-msg">[!UserManagerInfo? &field=`username`!] (app manager)</p>\r\n						<a href="[(site_url)]/manager/index.php?a=8&quickmanager=logout&logoutid=331" class="btn btn-primary btn-block btn-flat">Log out to switch to another user</a>\r\n					<@ELSE>\r\n						<p class="login-box-msg">[!UserManagerInfo? &field=`username`!] (user)</p>\r\n						<a href="[~[*id*]~]?webloginmode=lo" class="btn btn-primary btn-block btn-flat">Log out to switch to another user</a>\r\n					<@ENDIF>\r\n\r\n				<@ELSE>\r\n\r\n					[!WebMgrLogin? &tpl=`Login_AdminLTE`!] \r\n\r\n				<@ENDIF>\r\n			</div>\r\n		</div>\r\n		<!-- /.login-box -->\r\n		</div>\r\n		<!-- /.login-box -->\r\n\r\n		<!-- jQuery 3 -->\r\n		<script src="exface/vendor/almasaeed2010/adminlte/bower_components/jquery/dist/jquery.min.js"></script>\r\n		<!-- Bootstrap 3.3.7 -->\r\n		<script src="exface/vendor/almasaeed2010/adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>\r\n		<!-- iCheck -->\r\n		<script src="exface/vendor/almasaeed2010/adminlte/plugins/iCheck/icheck.min.js"></script>\r\n		<script>\r\n  $(function () {\r\n    $(\'input\').iCheck({\r\n      checkboxClass: \'icheckbox_square-blue\',\r\n      radioClass: \'iradio_square-blue\',\r\n      increaseArea: \'20%\' // optional\r\n    });\r\n  });\r\n		</script>\r\n	</body>\r\n</html>', 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 1, 0, 0, 0, 1, 0);
 
 REPLACE INTO `{PREFIX}manager_users`
 (id, username, password)VALUES
@@ -922,10 +923,10 @@ INSERT IGNORE INTO `{PREFIX}system_settings`
 ('server_offset_time','0'),
 ('manager_language','{MANAGERLANGUAGE}'),
 ('modx_charset','UTF-8'),
-('site_name','My Evolution Site'),
+('site_name','ExFace'),
 ('site_start','1'),
 ('error_page','1'),
-('unauthorized_page','1'),
+('unauthorized_page','3'),
 ('site_status','1'),
 ('auto_template_logic','{AUTOTEMPLATELOGIC}'),
 ('default_template','3'),
@@ -933,10 +934,10 @@ INSERT IGNORE INTO `{PREFIX}system_settings`
 ('publish_default','1'),
 ('friendly_urls','1'),
 ('friendly_alias_urls','1'),
-('use_alias_path','1'),
+('use_alias_path','0'),
 ('cache_type','2'),
-('failed_login_attempts','3'),
-('blocked_minutes','60'),
+('failed_login_attempts','5'),
+('blocked_minutes','30'),
 ('use_captcha','0'),
 ('emailsender','{ADMINEMAIL}'),
 ('use_editor','1'),
@@ -958,12 +959,14 @@ INSERT IGNORE INTO `{PREFIX}system_settings`
 ('warning_visibility', '0'),
 ('remember_last_tab', '1'),
 ('enable_bindings', '1'),
-('seostrict', '1'),
+('seostrict', '0'),
 ('number_of_results','30'),
 ('theme_refresher',''),
 ('show_picker', '0'),
 ('show_newresource_btn', '0'),
-('show_fullscreen_btn', '0');
+('show_fullscreen_btn', '0'),
+('udperms_allowroot', '1'),
+('which_editor', 'UXONeditor');;
 
 REPLACE INTO `{PREFIX}user_roles`
 (id,name,description,frames,home,view_document,new_document,save_document,publish_document,delete_document,empty_trash,action_ok,logout,help,messages,new_user,edit_user,logs,edit_parser,save_parser,edit_template,settings,credits,new_template,save_template,delete_template,edit_snippet,new_snippet,save_snippet,delete_snippet,edit_chunk,new_chunk,save_chunk,delete_chunk,empty_cache,edit_document,change_password,error_dialog,about,file_manager,save_user,delete_user,save_password,edit_role,save_role,delete_role,new_role,access_permissions,bk_manager,new_plugin,edit_plugin,save_plugin,delete_plugin,new_module,edit_module,save_module,exec_module,delete_module,view_eventlog,delete_eventlog,new_web_user,edit_web_user,save_web_user,delete_web_user,web_access_permissions,view_unpublished,import_static,export_static,remove_locks,assets_images,assets_files,change_resourcetype,display_locks,category_manager) VALUES

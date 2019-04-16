@@ -267,6 +267,7 @@ evo.collapse = function(a, b) {
 };
 
 // check connection to server
+/* FIXME https://github.com/evolution-cms/evolution/issues/1058
 evo.checkConnectionToServer = function() {
   var xhr = new (window.ActiveXObject || XMLHttpRequest)('Microsoft.XMLHTTP');
   xhr.open('GET', evo.urlCheckConnectionToServer + '?time=' + new Date().getTime(), false);
@@ -276,6 +277,9 @@ evo.checkConnectionToServer = function() {
   } catch (error) {
     return false;
   }
+};*/
+evo.checkConnectionToServer = function() {
+  return true;
 };
 
 function document_onload() {

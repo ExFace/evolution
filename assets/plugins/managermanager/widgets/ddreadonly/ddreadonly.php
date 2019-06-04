@@ -148,7 +148,7 @@ $mm_ddReadonly.before($mm_ddReadonly.val()).hide();
 				}
 			}
 			
-			if (count($fields) != count($tvs)){
+			if (is_array($tvs) && count($fields) != count($tvs)){
 				//Перебираем поля
 				foreach ($fields as $val){
 					//Если такое поле есть и это не TV

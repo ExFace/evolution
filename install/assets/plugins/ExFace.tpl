@@ -13,6 +13,7 @@
  * @internal    @events OnWebDeleteUser,OnWebSaveUser,OnManagerDeleteUser,OnManagerSaveUser,OnDocDuplicate,OnDocFormSave,OnStripAlias,OnBeforeUserFormSave,OnBeforeWUsrFormSave,OnRichTextEditorRegister,OnRichTextEditorInit
  * @internal    @modx_category ExFace
  * @internal    @installset base, sample
+ * @internal    @disabled 1
  */
 
 require MODX_BASE_PATH.'assets/plugins/../../exface/vendor/exface/ModxCmsConnector/modx/plugins/exface/plugin.exface.php';

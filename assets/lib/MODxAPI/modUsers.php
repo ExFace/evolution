@@ -228,14 +228,15 @@ class modUsers extends MODxAPI
                     session_regenerate_id(false);
                     $value = session_id();
                     /* 
-                    BOF FIX constraint violation when creating new users by AKA 
-                    Why are the current manager sessions updated here in the first place???
-                    if ($mid = $this->modx->getLoginUserID('mgr')) {
+                     * BOF FIX constraint violation when creating new users by AKA 
+                     *
+                    if (($mid = $this->modx->getLoginUserID('web')) && $mid === $this->getID()) {
                         $this->modx->db->query("UPDATE {$this->makeTable('active_user_locks')} SET `sid`='{$value}' WHERE `internalKey`={$mid}");
                         $this->modx->db->query("UPDATE {$this->makeTable('active_user_sessions')} SET `sid`='{$value}' WHERE `internalKey`={$mid}");
                         $this->modx->db->query("UPDATE {$this->makeTable('active_users')} SET `sid`='{$value}' WHERE `internalKey`={$mid}");
                     }
-                    EOF FIX constraint violation when creating new users by AKA */
+                     * EOF FIX constraint violation when creating new users by AKA 
+                    */
                     break;
                 case 'editedon':
                 case 'createdon':

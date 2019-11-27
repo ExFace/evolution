@@ -255,7 +255,8 @@ class modUsers extends MODxAPI
      */
     public function getPassword($pass)
     {
-        return md5($pass);
+        //return md5($pass);
+        return $this->modx->phpass->HashPassword($pass);
     }
 
     /**
@@ -583,7 +584,7 @@ class modUsers extends MODxAPI
      * @author Raymond Irving
      * @author Scotty Delicious
      *
-     * remeber может быть числом в секундах
+     * remeber Ð¼Ð¾Ð¶ÐµÑ‚ Ð±Ñ‹Ñ‚ÑŒ Ñ‡Ð¸Ñ�Ð»Ð¾Ð¼ Ð² Ñ�ÐµÐºÑƒÐ½Ð´Ð°Ñ…
      */
     protected function SessionHandler($directive, $cookieName, $remember = true)
     {

@@ -255,8 +255,7 @@ class modUsers extends MODxAPI
      */
     public function getPassword($pass)
     {
-        //return md5($pass);
-        return $this->modx->phpass->HashPassword($pass);
+        return md5($pass);
     }
 
     /**
